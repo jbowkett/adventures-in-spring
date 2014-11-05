@@ -1,3 +1,5 @@
 rootProject.name = 'adventures-in-spring'
 include 'accessing-data-jpa'
 
+include 'accessing-twitter'
+

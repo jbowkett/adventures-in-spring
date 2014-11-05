@@ -1,0 +1,36 @@
+
+buildscript {
+  repositories {
+    maven { url "http://repo.spring.io/libs-milestone" }
+    mavenLocal()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.8.RELEASE")
+  }
+}
+
+apply plugin: 'java'
+//apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+jar {
+    baseName = 'gs-accessing-twitter'
+    version =  '0.1.0'
+}
+
+repositories{
+  mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile("org.springframework.social:spring-social-twitter")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
